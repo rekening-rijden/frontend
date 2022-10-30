@@ -1,0 +1,9 @@
+<h2>My routes</h2>
+<ul class="routes">
+  <li *ngFor="let route of routes">
+    <button type="button">
+      <span class="id">{{route.id}}</span>
+      <span class="time">{{route.startTime}} - {{route.endTime}}</span>
+    </button>
+  </li>
+</ul>
