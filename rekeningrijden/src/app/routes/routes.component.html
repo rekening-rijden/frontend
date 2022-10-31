@@ -1,9 +1,38 @@
-<h2>My routes</h2>
-<ul class="routes">
-  <li *ngFor="let route of routes">
-    <button type="button">
-      <span class="id">{{route.id}}</span>
-      <span class="time">{{route.startTime}} - {{route.endTime}}</span>
-    </button>
-  </li>
-</ul>
+<!--<div class="map-container" leaflet-->
+<!--     [leafletOptions]="options"-->
+<!--     (leafletMapReady)="onMapReady($event)"-->
+<!--     (leafletMapZoomEnd)="onMapZoomEnd($event)"-->
+<!--&gt;</div>-->
+
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+
+    <!-- Start Time Column -->
+    <ng-container matColumnDef="startTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Start Time</th>
+      <td mat-cell *matCellDef="let row">{{ row.startTime | date:'medium' }}</td>
+    </ng-container>
+
+    <!-- End Time Column -->
+    <ng-container matColumnDef="endTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>End Time</th>
+      <td mat-cell *matCellDef="let row">{{ row.endTime | date:'medium' }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource?.data?.length"
+      [pageIndex]="0"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20]"
+      aria-label="Select page">
+  </mat-paginator>
+</div>
