@@ -13,3 +13,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+class AppRoutingModuleImpl extends AppRoutingModule {
+}

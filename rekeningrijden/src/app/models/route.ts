@@ -1,4 +1,4 @@
-import {Coordinates} from "./coordinates";
+import {Coordinate} from "./coordinate";
 
 export interface Route {
   id: string;

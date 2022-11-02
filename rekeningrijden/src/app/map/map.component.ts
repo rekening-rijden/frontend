@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import {AgGridAngular} from "ag-grid-angular";
 import {HttpClient} from "@angular/common/http";
-import {Coordinates} from "../models/coordinates";
+import {Coordinate} from "../models/coordinate";
 
 const CURRENT_USER /*currentVehicle*/ = 1 //JSON.parse(localStorage.getItem('currentUser'));
 
@@ -64,9 +64,7 @@ export class MapComponent implements AfterViewInit {
   // Example of consuming Grid Event
   onCellClicked( e: CellClickedEvent): void {
     console.log('cellClicked', e);
-    // this.removeRoutesFromMap();
-    // let coordinates = this.getCoordinatesFromRouteId(e.data.id);
-    // this.addRouteToMap(coordinates);
+    this.getCoordinatesFromRouteId(e.data.routeId);
   }
 
   // Example using Grid's API
@@ -96,20 +94,25 @@ export class MapComponent implements AfterViewInit {
     this.rowData$ = this.routeService.getRoutesByVehicleId(CURRENT_USER);
   }
 
-  public waypoints_= [];
-  addRouteToMap(coordinates: Coordinates[]): void {
+  public waypoints_: any[] = [];
+  addRouteToMap(coordinates: Coordinate[]): void {
     this.waypoints_ = [];
-    console.log("Coordinates: ", coordinates);
 
     for (let i = 0; i < coordinates.length; i++) {
-      // @ts-ignore
-      this.waypoints_.push(L.latLng(coordinates[i].lat, coordinates[i].lng));
+      this.waypoints_.push(L.latLng(coordinates[i].latitude, coordinates[i].longitude));
     }
     console.log("Waypoints: ", this.waypoints_);
     this.routingcontrol.getPlan().setWaypoints(this.waypoints_);
   }
-  //
-  // private getCoordinatesFromRouteId(id: string): Coordinates[] {
-  //   return this.routeService.getCoordinatesFromRouteId(id).subscribe();
-  // }
+
+  private getCoordinatesFromRouteId(id: string) {
+    this.routeService.getCoordinatesFromRouteId(id).subscribe(
+      (coords: Coordinate[]) => {
+        console.log("Raw Coordinates: ", coords);
+        this.addRouteToMap(coords);
+      }, error => {
+        console.log(error);
+      }
+    );
+  }
 }
