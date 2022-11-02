@@ -1,8 +1,7 @@
-import {Coordinates} from "./Coordinates";
+import {Coordinates} from "./coordinates";
 
 export interface Route {
-  id: number;
-  startTime: number;
-  endTime: number;
-  coordinates: Coordinates[];
+  id: string;
+  startTime: Date;
+  endTime: Date;
 }

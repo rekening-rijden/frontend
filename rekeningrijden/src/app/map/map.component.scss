@@ -1,9 +1,7 @@
 .map-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  width: 80%;
+  height: 40%;
   margin: 30px;
 }
 
@@ -15,3 +13,24 @@
 #map {
   height: 100%;
 }
+
+//.center {
+//  //horizontal center
+//  margin-left: auto;
+//  margin-right: auto;
+//}
+//
+//.styled-table {
+//  font-size: 0.9em;
+//  font-family: sans-serif;
+//  min-width: 400px;
+//  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+//}
+//
+//.styled-table thead tr {
+//  background-color: #009879;
+//  color: #ffffff;
+//  text-align: left;
+//}
+//
+//
