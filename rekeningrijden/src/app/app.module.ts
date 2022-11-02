@@ -11,8 +11,8 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { MapComponent } from './map/map.component';
 import { HttpClientModule } from "@angular/common/http";
 import {AgGridModule} from "ag-grid-angular";
-// import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-// import { InMemoryDataService } from './in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -31,12 +31,12 @@ import {AgGridModule} from "ag-grid-angular";
     HttpClientModule,
     AgGridModule,
 
-//     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-// // and returns simulated server responses.
-// // Remove it when a real server is ready to receive requests.
-//     HttpClientInMemoryWebApiModule.forRoot(
-//       InMemoryDataService, { dataEncapsulation: false }
-//     )
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+// and returns simulated server responses.
+// Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

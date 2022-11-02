@@ -7,8 +7,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class RouteService {
-  private baseUrl = 'http://localhost:8080/';
-  private routesUrl = this.baseUrl.concat('api/v1/route/vehicleid/');
+  private routesUrl = 'api/routes';
 
   // routes: Route[] = [
   //   {id: '1', startTime: new Date('2022-09-18 17:32'), endTime: new Date('2022-09-18 18:02'), coordinates: [{lat: 1, lng: 1}, {lat: 2, lng: 2}]},
@@ -18,8 +17,8 @@ export class RouteService {
   // ]
   constructor(private http: HttpClient) { }
 
-  getRoutesByVehicleId(vehicleId: number): Observable<Route[]> {
-    return this.http.get<Route[]>(this.routesUrl.concat(vehicleId.toString()))
+  getRoutes(): Observable<Route[]> {
+    return this.http.get<Route[]>(this.routesUrl)
       .pipe(
         catchError(this.handleError<Route[]>('getRoutes', []))
       );

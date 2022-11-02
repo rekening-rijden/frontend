@@ -66,7 +66,7 @@ export class MapComponent implements AfterViewInit {
     console.log('cellClicked', e);
     // this.removeRoutesFromMap();
     // let coordinates = this.getCoordinatesFromRouteId(e.data.id);
-    // this.addRouteToMap(coordinates);
+    this.addRouteToMap(e.data.coordinates);
   }
 
   // Example using Grid's API
@@ -93,7 +93,7 @@ export class MapComponent implements AfterViewInit {
   }
 
   getRoutes(): void {
-    this.rowData$ = this.routeService.getRoutesByVehicleId(CURRENT_USER);
+    this.rowData$ = this.routeService.getRoutes();
   }
 
   public waypoints_= [];
