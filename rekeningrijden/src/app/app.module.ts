@@ -13,31 +13,37 @@ import { HttpClientModule } from "@angular/common/http";
 import {AgGridModule} from "ag-grid-angular";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
-    MapComponent
+    MapComponent,
+      LoginComponent,
+      NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    LeafletModule,
-    HttpClientModule,
-    AgGridModule,
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatSortModule,
+        LeafletModule,
+        HttpClientModule,
+        AgGridModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
 // and returns simulated server responses.
 // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
-  ],
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, {dataEncapsulation: false}
+        ),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,33 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li a {
+  display: block;
+  width: 60px;
+}
+
+/* Change the link color on hover */
+li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Create a "active/current" link class */
+.active {
+  background-color: #4CAF50;
+}
+
+/* Style the list item */
+li {
+  float: left;
+}
+
+/* Clear floats after the list */
+ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
