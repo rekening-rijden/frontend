@@ -1,0 +1,15 @@
+<h2>Login Form</h2>
+
+<div class="imgcontainer">
+  <img src="/assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+</div>
+
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input [(ngModel)]="username" type="text" placeholder="Enter Username" id="uname" name="uname" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input [(ngModel)]="password" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+
+  <button (click)="login()" type="submit">Login</button>
+</div>

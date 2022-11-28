@@ -13,12 +13,23 @@ import { HttpClientModule } from "@angular/common/http";
 import {AgGridModule} from "ag-grid-angular";
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { InterpolComponent } from './interpol/interpol.component';
+import { LoginComponent } from './login/login.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import {FormsModule} from "@angular/forms";
+import { SelectcarComponent } from './selectcar/selectcar.component';
+import { CarComponent } from './car/car.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-
-    MapComponent
+    MapComponent,
+    InterpolComponent,
+    LoginComponent,
+    NotfoundComponent,
+    SelectcarComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,8 +46,9 @@ import { InMemoryDataService } from './in-memory-data.service';
 // and returns simulated server responses.
 // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    )
+      InMemoryDataService, {dataEncapsulation: false}
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
