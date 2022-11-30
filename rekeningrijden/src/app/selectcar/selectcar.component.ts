@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Route} from "../models/route";
+import {Route} from "../__models/route";
 import {Router} from "@angular/router";
 
 export interface Car {
@@ -40,6 +40,6 @@ export class SelectcarComponent implements OnInit {
   selectCar(car: Car) {
     this.selectedCar = car;
     // redirect to map component with selected car
-    this.route.navigate(['/car/' + this.selectedCar.id]);
+    this.route.navigate(['/vehicle', this.selectedCar.id]);
   }
 }

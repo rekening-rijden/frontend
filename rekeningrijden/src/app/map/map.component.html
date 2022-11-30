@@ -5,33 +5,3 @@
     </div>
   </div>
 </div>
-
-<ag-grid-angular
-  style="width: 100%; height: 100%"
-  class="ag-theme-alpine"
-  [columnDefs]="columnDefs"
-  [defaultColDef]="defaultColDef"
-  [rowData]="rowData$ | async"
-  [rowSelection]="'single'"
-  [animateRows]="true"
-  (gridReady)="onGridReady($event)"
-  (cellClicked)="onCellClicked($event)"
-></ag-grid-angular>
-
-
-<!--<table class="styled-table center">-->
-<!--  <thead>-->
-<!--  <tr>-->
-<!--    <th>Start Time</th>-->
-<!--    <th>End Time</th>-->
-<!--    <th>Total Distance</th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody>-->
-<!--  <tr *ngFor="let route of routes" class="active-row">-->
-<!--    <td>{{route?.startTime}}</td>-->
-<!--    <td>{{route?.endTime}}</td>-->
-<!--    <td>15km</td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->

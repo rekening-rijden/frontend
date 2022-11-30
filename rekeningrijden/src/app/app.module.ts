@@ -18,7 +18,9 @@ import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import {FormsModule} from "@angular/forms";
 import { SelectcarComponent } from './selectcar/selectcar.component';
-import { CarComponent } from './car/car.component';
+import { VehicleComponent } from './vehicle/vehicle.component';
+import {MatTabsModule} from "@angular/material/tabs";
+import { InvoiceComponent } from './invoice/invoice.component';
 
 
 @NgModule({
@@ -29,7 +31,8 @@ import { CarComponent } from './car/car.component';
     LoginComponent,
     NotfoundComponent,
     SelectcarComponent,
-    CarComponent
+    VehicleComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +51,8 @@ import { CarComponent } from './car/car.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false}
     ),
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

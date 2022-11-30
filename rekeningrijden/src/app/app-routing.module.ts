@@ -4,6 +4,7 @@ import {MapComponent} from "./map/map.component";
 import {LoginComponent} from "./login/login.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import {SelectcarComponent} from "./selectcar/selectcar.component";
+import {VehicleComponent} from "./vehicle/vehicle.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -11,6 +12,7 @@ const routes: Routes = [
   //route for map component
   { path: 'map', component: MapComponent },
   { path: 'selectcar', component: SelectcarComponent },
+  { path: 'vehicle/:id', component: VehicleComponent },
   { path: '**', component: NotfoundComponent }
 ];
 
