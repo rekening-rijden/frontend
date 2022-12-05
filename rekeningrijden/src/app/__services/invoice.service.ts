@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, of} from "rxjs";
-import {Route} from "../__models/route";
 import {Invoice} from "../__models/invoice";
 
 @Injectable({

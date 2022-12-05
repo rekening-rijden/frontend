@@ -11,8 +11,6 @@ import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import { MapComponent } from './map/map.component';
 import { HttpClientModule } from "@angular/common/http";
 import {AgGridModule} from "ag-grid-angular";
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
 import { InterpolComponent } from './interpol/interpol.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
@@ -21,7 +19,9 @@ import { SelectcarComponent } from './selectcar/selectcar.component';
 import { VehicleComponent } from './vehicle/vehicle.component';
 import {MatTabsModule} from "@angular/material/tabs";
 import { InvoiceComponent } from './invoice/invoice.component';
-
+import {TimetaxModule} from "./timetax/timetax.module";
+import {RoadtaxModule} from "./roadtax/roadtax.module";
+import {BasepriceModule} from "./baseprice/baseprice.module";
 
 @NgModule({
   declarations: [
@@ -45,12 +45,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
     HttpClientModule,
     AgGridModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-// and returns simulated server responses.
-// Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
-    ),
+    BasepriceModule,
+    TimetaxModule,
+    RoadtaxModule,
+
     FormsModule,
     MatTabsModule
   ],
