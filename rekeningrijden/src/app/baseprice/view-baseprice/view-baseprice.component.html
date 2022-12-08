@@ -4,7 +4,7 @@
       Baseprices
     </mat-card-title>
     <div *ngFor="let baseprice of baseprices">
-      <app-update-baseprice [baseprice]="baseprice"></app-update-baseprice>
+      <app-update-baseprice [baseprice]="baseprice" (update)="updateData()" (delete)="updateData()"></app-update-baseprice>
       <hr>
     </div>
     <br>

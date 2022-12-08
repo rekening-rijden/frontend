@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Baseprice} from "../baseprice";
 import {BasepriceService} from "../baseprice.service";
 
@@ -10,6 +10,8 @@ import {BasepriceService} from "../baseprice.service";
 export class UpdateBasepriceComponent implements OnInit {
 
   @Input() public baseprice: Baseprice = {surTax: 0, engineType: ""};
+  @Output() update: EventEmitter<any> = new EventEmitter();
+  @Output() delete: EventEmitter<any> = new EventEmitter();
 
   constructor(private service: BasepriceService) { }
 
@@ -18,18 +20,14 @@ export class UpdateBasepriceComponent implements OnInit {
 
   updateBasePrice() {
     this.service.putBaseprice(this.baseprice).subscribe(
-      result => {
-
-      }
+      () => this.update.emit()
     );
   }
 
   deleteBasePrice() {
     if(window.confirm("Are you sure you want to delete baseprice for enginetype " + this.baseprice.engineType + "?")){
       this.service.deleteBasePrice(this.baseprice.engineType).subscribe(
-        result => {
-          console.log("deleted")
-        }
+        () => this.delete.emit()
       );
     }
   }

@@ -24,6 +24,6 @@ export class BasepriceService {
   }
 
   deleteBasePrice(engineType: string): Observable<Object> {
-    return this.http.delete(`${env.dev.serverUrl}/baseprice/` + engineType);
+    return this.http.delete(`${env.dev.serverUrl}/baseprice?engineType=` + engineType);
   }
 }
