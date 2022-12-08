@@ -15,16 +15,15 @@ export class BasepriceService {
     return this.http.get(`${env.dev.serverUrl}/baseprice/all`);
   }
 
-  postBaseprice(baseprice: Baseprice): void {
-    this.http.post<Baseprice>(`${env.dev.serverUrl}/baseprice`, baseprice);
+  postBaseprice(baseprice: Baseprice): Observable<Object> {
+    return this.http.post<Baseprice>(`${env.dev.serverUrl}/baseprice`, baseprice);
   }
 
-  putBaseprice(baseprice: Baseprice): void {
-    console.log(baseprice)
-    this.http.put<Baseprice>(`${env.dev.serverUrl}/baseprice`, baseprice);
+  putBaseprice(baseprice: Baseprice): Observable<Object> {
+    return this.http.put<Baseprice>(`${env.dev.serverUrl}/baseprice`, baseprice);
   }
 
-  deleteBasePrice(engineType: string): void {
-    this.http.delete(`${env.dev.serverUrl}/baseprice/` + engineType);
+  deleteBasePrice(engineType: string): Observable<Object> {
+    return this.http.delete(`${env.dev.serverUrl}/baseprice/` + engineType);
   }
 }

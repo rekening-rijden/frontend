@@ -7,6 +7,7 @@ import {FormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import { CreateBasepriceComponent } from './create-baseprice/create-baseprice.component';
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
     declarations: [
@@ -18,12 +19,13 @@ import { CreateBasepriceComponent } from './create-baseprice/create-baseprice.co
     UpdateBasepriceComponent,
     ViewBasepriceComponent
   ],
-  imports: [
-    CommonModule,
-    MatInputModule,
-    FormsModule,
-    MatCardModule,
-    MatButtonModule
-  ]
+    imports: [
+        CommonModule,
+        MatInputModule,
+        FormsModule,
+        MatCardModule,
+        MatButtonModule,
+        FlexModule
+    ]
 })
 export class BasepriceModule { }

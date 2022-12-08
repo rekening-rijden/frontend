@@ -1,15 +1,20 @@
-<h2>Login Form</h2>
+<div fxLayout="column" fxLayoutAlign="center center">
+  <div>
+    <h2> Rekeningrijden </h2>
+  </div>
 
-<div class="imgcontainer">
-  <img src="/assets/images/img_avatar2.png" alt="Avatar" class="avatar">
-</div>
+  <div class="imgcontainer">
+    <img src="/assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
 
-<div class="container">
-  <label for="uname"><b>Username</b></label>
-  <input [(ngModel)]="username" type="text" placeholder="Enter Username" id="uname" name="uname" required>
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input [(ngModel)]="username" type="text" placeholder="Enter Username" id="uname" name="uname" required>
 
-  <label for="psw"><b>Password</b></label>
-  <input [(ngModel)]="password" type="password" placeholder="Enter Password" id="psw" name="psw" required>
+    <label for="psw"><b>Password</b></label>
+    <input [(ngModel)]="password" type="password" placeholder="Enter Password" id="psw" name="psw" required>
 
-  <button (click)="login()" type="submit">Login</button>
+    <button (click)="login()" type="submit">Login</button>
+  </div>
+
 </div>

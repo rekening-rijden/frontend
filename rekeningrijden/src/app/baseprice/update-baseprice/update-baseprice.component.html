@@ -1,11 +1,22 @@
 <div>
   <div>
-    <div>
-      Enginetype: {{ baseprice.engineType }}
-      <mat-label>Tax per Kilometer (GBP)</mat-label>
-      <input [(ngModel)]="baseprice.kilometerTax">
-      <button mat-raised-button type="submit" (click)="updateBasePrice()"> Update </button>
-      <button mat-raised-button type="submit" color="warn" (click)="deleteBasePrice()"> Delete </button>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex>
+        {{ baseprice.engineType }}
+      </div>
+      <div fxFlex="20">
+        <form class="example-form">
+          <mat-form-field>
+            <mat-label>Tax per Kilometer (GBP)</mat-label>
+            <input name="kilo-input" matInput [(ngModel)]="baseprice.surTax">
+          </mat-form-field>
+        </form>
+      </div>
+      <div fxLayout="row">
+        <button mat-raised-button type="submit" (click)="updateBasePrice()"> Update </button>
+        &nbsp;
+        <button mat-raised-button type="submit" color="warn" (click)="deleteBasePrice()"> Delete </button>
+      </div>
     </div>
   </div>
 </div>

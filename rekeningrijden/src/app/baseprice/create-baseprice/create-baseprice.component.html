@@ -1,11 +1,22 @@
-<div>
+<div style="text-align: center">
+  <h2>New baseprice</h2>
+</div>
+<br>
+<div fxLayout="row" fxLayoutAlign="center">
+  <div></div>
+  <div fxFlex="60">
+    <form class="example-form" fxLayout="row" fxLayoutAlign="space-evenly center">
+      <mat-form-field >
+        <mat-label>Engine type</mat-label>
+        <input name="engine-input" matInput [(ngModel)]="baseprice.engineType">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Tax per Kilometer (GBP)</mat-label>
+        <input name="kilo-input" matInput [(ngModel)]="baseprice.surTax">
+      </mat-form-field>
+    </form>
+  </div>
   <div>
-    <div>
-      <mat-label>Enginetype</mat-label>
-      <input [(ngModel)]="baseprice.engineType">
-      <mat-label>Tax per Kilometer (GBP)</mat-label>
-      <input [(ngModel)]="baseprice.kilometerTax">
-      <button mat-raised-button type="submit" (click)="createBasePrice()"> Update </button>
-    </div>
+    <button mat-raised-button type="submit" color="primary" (click)="createBasePrice()"> Create </button>
   </div>
 </div>

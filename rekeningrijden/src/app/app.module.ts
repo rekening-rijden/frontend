@@ -22,6 +22,7 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import {TimetaxModule} from "./timetax/timetax.module";
 import {RoadtaxModule} from "./roadtax/roadtax.module";
 import {BasepriceModule} from "./baseprice/baseprice.module";
+import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -50,9 +51,12 @@ import {BasepriceModule} from "./baseprice/baseprice.module";
     RoadtaxModule,
 
     FormsModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

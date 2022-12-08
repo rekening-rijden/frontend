@@ -22,4 +22,12 @@ export class ViewBasepriceComponent implements OnInit {
     )
   }
 
+  updateData() {
+    console.log("event")
+    this.service.readAllBasePrices().subscribe(
+      response => {
+        this.baseprices = response as Baseprice[];
+      }
+    )
+  }
 }

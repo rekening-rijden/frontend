@@ -9,7 +9,7 @@ import {BasepriceService} from "../baseprice.service";
 })
 export class UpdateBasepriceComponent implements OnInit {
 
-  @Input() public baseprice: Baseprice = {kilometerTax: 0, engineType: ""};
+  @Input() public baseprice: Baseprice = {surTax: 0, engineType: ""};
 
   constructor(private service: BasepriceService) { }
 
@@ -17,10 +17,20 @@ export class UpdateBasepriceComponent implements OnInit {
   }
 
   updateBasePrice() {
-    this.service.putBaseprice(this.baseprice);
+    this.service.putBaseprice(this.baseprice).subscribe(
+      result => {
+
+      }
+    );
   }
 
   deleteBasePrice() {
-    this.service.deleteBasePrice(this.baseprice.engineType)
+    if(window.confirm("Are you sure you want to delete baseprice for enginetype " + this.baseprice.engineType + "?")){
+      this.service.deleteBasePrice(this.baseprice.engineType).subscribe(
+        result => {
+          console.log("deleted")
+        }
+      );
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Baseprice} from "../baseprice";
 import {BasepriceService} from "../baseprice.service";
 
@@ -9,7 +9,8 @@ import {BasepriceService} from "../baseprice.service";
 })
 export class CreateBasepriceComponent implements OnInit {
 
-  public baseprice: Baseprice = {kilometerTax: 0, engineType: ""};
+  public baseprice: Baseprice = {surTax: 0, engineType: ""};
+  @Output() create: EventEmitter<any> = new EventEmitter();
 
   constructor(private service: BasepriceService) { }
 
@@ -17,9 +18,11 @@ export class CreateBasepriceComponent implements OnInit {
   }
 
   createBasePrice(){
-    this.service.postBaseprice(this.baseprice);
+    this.service.postBaseprice(this.baseprice).subscribe(
+      () => this.create.emit()
+    );
     // reset form
-    this.baseprice = {kilometerTax: 0, engineType: ""};
+    this.baseprice = {surTax: 0, engineType: ""};
   }
 
 }

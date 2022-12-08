@@ -1,8 +1,13 @@
 <mat-card>
   <mat-card-content>
+    <mat-card-title style="color: #3659db">
+      Baseprices
+    </mat-card-title>
     <div *ngFor="let baseprice of baseprices">
       <app-update-baseprice [baseprice]="baseprice"></app-update-baseprice>
+      <hr>
     </div>
-    <app-create-baseprice></app-create-baseprice>
+    <br>
+    <app-create-baseprice (create)="updateData()"></app-create-baseprice>
   </mat-card-content>
 </mat-card>
