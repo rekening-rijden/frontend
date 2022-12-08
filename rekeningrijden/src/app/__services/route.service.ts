@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Route} from "../__models/route";
 import {catchError, Observable, of} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {ROUTES} from "../__CONSTANTS/mock-routes";
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,13 @@ export class RouteService {
   constructor(private http: HttpClient) { }
 
   getRoutes(): Observable<Route[]> {
-    return this.http.get<Route[]>(this.routesUrl)
-      .pipe(
-        catchError(this.handleError<Route[]>('getRoutes', []))
-      );
+    return new Observable<Route[]>(subscriber => {
+      subscriber.next(ROUTES);
+    })
+    // return this.http.get<Route[]>(this.routesUrl)
+    //   .pipe(
+    //     catchError(this.handleError<Route[]>('getRoutes', []))
+    //   );
   }
 
   getRoutesById(id: number): Observable<Route[]> {

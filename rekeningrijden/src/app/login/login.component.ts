@@ -23,14 +23,14 @@ export class LoginComponent {
       localStorage.setItem('currentUser', JSON.stringify(CURRENT_USER));
       this.router.navigate(['/selectcar']);
     }
-    if(this.username == 'belasting') {
-      this.router.navigate(['/belasting']);
+    else if(this.username === 'belasting') {
+      this.router.navigate(['/tax']);
     }
-    if(this.username == 'interpol') {
+    else if(this.username == 'interpol') {
       this.router.navigate(['/interpol']);
     }
     else {
-      this.router.navigate(['/selectcar']);
+      this.router.navigate(['/notfound']);
     }
     console.log(this.username);
     console.log(this.password);
