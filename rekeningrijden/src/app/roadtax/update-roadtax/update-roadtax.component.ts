@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Roadtax} from "../roadtax";
+import {RoadtaxService} from "../roadtax.service";
 
 @Component({
   selector: 'app-update-roadtax',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateRoadtaxComponent implements OnInit {
 
-  constructor() { }
+  @Input() public roadtax: Roadtax = {surTax: 0, roadType: ""};
+  @Output() update: EventEmitter<any> = new EventEmitter();
+  @Output() delete: EventEmitter<any> = new EventEmitter();
+
+  constructor(private service: RoadtaxService) { }
 
   ngOnInit(): void {
   }
 
+  updateRoadtax() {
+    this.service.putRoadtax(this.roadtax).subscribe(
+      () => this.update.emit()
+    );
+  }
+
+  deleteRoadtax() {
+    if(window.confirm("Are you sure you want to delete roadtax for roadtype " + this.roadtax.roadType + "?")){
+      this.service.deleteRoadtax(this.roadtax.roadType).subscribe(
+        () => this.delete.emit()
+      );
+    }
+  }
 }

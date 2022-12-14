@@ -1,1 +1,13 @@
-<p>view-roadtax works!</p>
+<mat-card>
+  <mat-card-content>
+    <mat-card-title style="color: #3659db">
+      Roadtaxes
+    </mat-card-title>
+    <div *ngFor="let roadtax of roadtaxes">
+      <app-update-roadtax [roadtax]="roadtax" (update)="updateData()" (delete)="updateData()"></app-update-roadtax>
+      <hr>
+    </div>
+    <br>
+    <app-create-roadtax (create)="updateData()"></app-create-roadtax>
+  </mat-card-content>
+</mat-card>

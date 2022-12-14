@@ -18,11 +18,13 @@ export class CreateBasepriceComponent implements OnInit {
   }
 
   createBasePrice(){
-    this.service.postBaseprice(this.baseprice).subscribe(
-      () => this.create.emit()
-    );
-    // reset form
-    this.baseprice = {surTax: 0, engineType: ""};
+    if(this.baseprice.engineType != ''){
+      this.service.postBaseprice(this.baseprice).subscribe(
+        () => this.create.emit()
+      );
+      // reset form
+      this.baseprice = {surTax: 0, engineType: ""};
+    }
   }
 
 }

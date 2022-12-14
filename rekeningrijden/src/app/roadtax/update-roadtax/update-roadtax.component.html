@@ -1,1 +1,22 @@
-<p>update-roadtax works!</p>
+<div>
+  <div>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <div fxFlex>
+        {{ roadtax.roadType }}
+      </div>
+      <div fxFlex="20">
+        <form class="example-form">
+          <mat-form-field>
+            <mat-label>Tax per Kilometer (GBP)</mat-label>
+            <input name="kilo-input" matInput [(ngModel)]="roadtax.surTax">
+          </mat-form-field>
+        </form>
+      </div>
+      <div fxLayout="row">
+        <button mat-raised-button type="submit" (click)="updateRoadtax()"> Update </button>
+        &nbsp;
+        <button mat-raised-button type="submit" color="warn" (click)="deleteRoadtax()"> Delete </button>
+      </div>
+    </div>
+  </div>
+</div>
