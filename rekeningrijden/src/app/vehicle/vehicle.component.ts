@@ -7,7 +7,6 @@ import {Observable, Subscription} from "rxjs";
 import {ActivatedRoute, Route} from "@angular/router";
 import {CellClickedEvent, ColDef, GridReadyEvent} from "ag-grid-community";
 import {AgGridAngular} from "ag-grid-angular";
-import {INVOICES} from "../__CONSTANTS/mock-invoices";
 import {MapComponent} from "../map/map.component";
 
 @Component({
@@ -44,19 +43,19 @@ export class VehicleComponent implements OnInit, OnDestroy {
   }
 
   getInvoicesByCarId(carId: number) {
-    this.invoices = INVOICES.filter(invoice => invoice.carId == carId);
-    if(this.invoices.length > 0) {
-      this.selectedInvoiceId = this.invoices[0].id;
-    }
-    // this.invoiceService.getInvoicesByCarId(carId).subscribe(
-    //   data => {
-    //     this.invoices = data;
-    //     console.log(this.invoices);
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
+    // this.invoices = INVOICES.filter(invoice => invoice.carId == carId);
+    // if(this.invoices.length > 0) {
+    //   this.selectedInvoiceId = this.invoices[0].id;
+    // }
+    this.invoiceService.getInvoicesByCarId(carId).subscribe(
+      data => {
+        this.invoices = data;
+        console.log(this.invoices);
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   getRoutesByCarId(carId: number) {

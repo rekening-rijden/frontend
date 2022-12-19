@@ -1,6 +1,6 @@
 import {Component, OnInit, Input, SimpleChanges} from '@angular/core';
 import {Invoice} from "../__models/invoice";
-import {INVOICES} from "../__CONSTANTS/mock-invoices";
+import {InvoiceService} from "../__services/invoice.service";
 
 @Component({
   selector: 'app-invoice',
@@ -11,14 +11,20 @@ export class InvoiceComponent implements OnInit {
   @Input() invoiceId: number = 0;
 
   invoice: Invoice | undefined;
-  constructor() { }
+  constructor(private invoiceService: InvoiceService) { }
 
   ngOnInit(): void {
     this.getInvoiceById(this.invoiceId);
   }
 
   getInvoiceById(invoiceId: number) {
-    this.invoice = INVOICES.find(invoice => invoice.id == invoiceId);
+   this.invoiceService.getInvoiceById(invoiceId).subscribe(
+      data => {
+        this.invoice = data;
+        console.log("Invoice: " + invoiceId);
+        console.log(this.invoice);
+      }
+   );
   }
 
   ngOnChanges(changes: SimpleChanges) {

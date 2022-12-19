@@ -1,5 +1,7 @@
-<div>Id: {{invoice?.id}}
-CarId: {{invoice?.carId}}
-Amount: {{invoice?.amount}}
-Date: {{invoice?.date | date:'dd/MM/yyyy'}}
+<div *ngIf="invoice">
+  <p>Id: {{invoice.id}}</p>
+<p>CarId: {{invoice.carId}}</p>
+<p>Amount: {{invoice.totalPrice}}</p>
+<p>Date: {{invoice.date | date:'dd/MM/yyyy'}}</p>
+  <button><a [href]=invoice.paymentLink>Mollie link</a></button>
 </div>

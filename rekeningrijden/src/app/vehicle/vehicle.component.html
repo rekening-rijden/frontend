@@ -4,7 +4,7 @@
       <ng-template matTabContent>
         <ul>
           <li *ngFor="let invoice of invoices">
-            <p [class.active]="invoice.id === this.selectedInvoiceId" (click)="invoiceOnSelect(invoice.id)">{{ invoice.id }}, € {{ invoice.amount }}, {{ invoice.date | date : 'short' }}</p>
+            <p [class.active]="invoice.id === this.selectedInvoiceId" (click)="invoiceOnSelect(invoice.id)">{{ invoice.id }}, € {{ invoice.totalPrice }}, {{ invoice.date | date : 'short' }}</p>
           </li>
         </ul>
       </ng-template>

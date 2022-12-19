@@ -1,6 +1,10 @@
+import {InvoiceStatus} from "./invoiceStatus";
+
 export interface Invoice {
   id: number;
   carId: number;
   date: Date;
-  amount: number;
+  totalPrice: number;
+  paymentLink: string;
+  status?: InvoiceStatus;
 }

@@ -8,7 +8,7 @@ export interface Car {
 }
 
 export const cars: Car[] = [
-  { id: 12, registrationNumber: 'AA19AAA' },
+  { id: 1, registrationNumber: 'AA19AAA' },
   { id: 20, registrationNumber: 'AA12AAA' }
 ];
 
