@@ -10,22 +10,23 @@ import { CreateBasepriceComponent } from './create-baseprice/create-baseprice.co
 import {FlexModule} from "@angular/flex-layout";
 
 @NgModule({
-    declarations: [
-        ViewBasepriceComponent,
-        UpdateBasepriceComponent,
-        CreateBasepriceComponent
-    ],
+  declarations: [
+      ViewBasepriceComponent,
+      UpdateBasepriceComponent,
+      CreateBasepriceComponent
+  ],
   exports: [
     UpdateBasepriceComponent,
-    ViewBasepriceComponent
+    ViewBasepriceComponent,
+    CreateBasepriceComponent
   ],
-    imports: [
-        CommonModule,
-        MatInputModule,
-        FormsModule,
-        MatCardModule,
-        MatButtonModule,
-        FlexModule
-    ]
+  imports: [
+      CommonModule,
+      MatInputModule,
+      FormsModule,
+      MatCardModule,
+      MatButtonModule,
+      FlexModule
+  ]
 })
 export class BasepriceModule { }
