@@ -5,8 +5,7 @@ import {LoginComponent} from "./login/login.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import {SelectcarComponent} from "./selectcar/selectcar.component";
 import {VehicleComponent} from "./vehicle/vehicle.component";
-import {ViewBasepriceComponent} from "./baseprice/view-baseprice/view-baseprice.component";
-import {ViewRoadtaxComponent} from "./roadtax/view-roadtax/view-roadtax.component";
+import {ViewTaxComponent} from "./tax/view-tax/view-tax.component";
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,8 +14,7 @@ const routes: Routes = [
   { path: 'map', component: MapComponent },
   { path: 'selectcar', component: SelectcarComponent },
   { path: 'vehicle/:id', component: VehicleComponent },
-  { path: 'tax', component: ViewBasepriceComponent },
-  { path: 'roadtax', component: ViewRoadtaxComponent },
+  { path: 'tax', component: ViewTaxComponent },
   { path: '**', component: NotfoundComponent }
 ];
 
