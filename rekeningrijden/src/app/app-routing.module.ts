@@ -6,15 +6,17 @@ import {NotfoundComponent} from "./notfound/notfound.component";
 import {SelectcarComponent} from "./selectcar/selectcar.component";
 import {VehicleComponent} from "./vehicle/vehicle.component";
 import {ViewTaxComponent} from "./tax/view-tax/view-tax.component";
+import {ThankyouComponent} from "./thankyou/thankyou.component";
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   //route for map component
   { path: 'map', component: MapComponent },
   { path: 'selectcar', component: SelectcarComponent },
   { path: 'vehicle/:id', component: VehicleComponent },
   { path: 'tax', component: ViewTaxComponent },
+  { path: 'thankyou', component: ThankyouComponent },
   { path: '**', component: NotfoundComponent }
 ];
 

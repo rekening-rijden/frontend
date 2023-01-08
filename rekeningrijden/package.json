@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "e2e": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "ag-grid-angular": "^28.2.0",
     "ag-grid-community": "^28.2.0",
     "angular-in-memory-web-api": "^0.14.0",
+    "chance": "^1.1.9",
     "leaflet": "^1.9.2",
     "leaflet-routing-machine": "^3.2.12",
     "rxjs": "~7.5.0",
@@ -38,6 +40,7 @@
     "@angular/compiler-cli": "^14.2.0",
     "@types/jasmine": "~4.0.0",
     "@types/leaflet-routing-machine": "^3.2.4",
+    "cypress": "^12.2.0",
     "jasmine-core": "~4.3.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

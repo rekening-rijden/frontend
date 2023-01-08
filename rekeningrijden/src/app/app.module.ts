@@ -33,6 +33,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MatButtonModule} from "@angular/material/button";
     UpdateRoadtaxComponent,
     UpdateTimetaxComponent,
     CreateBasepriceComponent,
-    CreateRoadtaxComponent
+    CreateRoadtaxComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,
