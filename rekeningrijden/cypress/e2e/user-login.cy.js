@@ -1,9 +1,6 @@
-import Chance from 'chance'
-const chance = new Chance()
-
 describe('User login', () => {
   const username = "user";
-  const password = "user");
+  const password = "user";
 
 
   beforeEach(() => {

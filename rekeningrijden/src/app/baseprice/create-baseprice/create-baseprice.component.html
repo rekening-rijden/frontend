@@ -8,15 +8,15 @@
     <form class="example-form" fxLayout="row" fxLayoutAlign="space-evenly center">
       <mat-form-field >
         <mat-label>Engine type</mat-label>
-        <input name="engine-input" matInput [(ngModel)]="baseprice.engineType">
+        <input name="engine-input-new" matInput [(ngModel)]="baseprice.engineType">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Tax per Kilometer (GBP)</mat-label>
-        <input name="kilo-input" matInput [(ngModel)]="baseprice.surTax">
+        <input name="kilo-input-new" matInput [(ngModel)]="baseprice.surTax">
       </mat-form-field>
     </form>
   </div>
   <div>
-    <button mat-raised-button type="submit" color="primary" (click)="createBasePrice()"> Create </button>
+    <button mat-raised-button type="submit" id="add-new" color="primary" (click)="createBasePrice()"> Create </button>
   </div>
 </div>

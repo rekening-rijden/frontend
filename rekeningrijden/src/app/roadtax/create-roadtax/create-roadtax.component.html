@@ -7,16 +7,16 @@
   <div fxFlex="60">
     <form class="example-form" fxLayout="row" fxLayoutAlign="space-evenly center">
       <mat-form-field >
-        <mat-label>Engine type</mat-label>
-        <input name="engine-input" matInput [(ngModel)]="roadtax.roadType">
+        <mat-label>Road type</mat-label>
+        <input name="roadtype-input-new" matInput [(ngModel)]="roadtax.roadType">
       </mat-form-field>
       <mat-form-field>
         <mat-label>Tax per Kilometer (GBP)</mat-label>
-        <input name="kilo-input" matInput [(ngModel)]="roadtax.surTax">
+        <input name="kilo-input-road-new" matInput [(ngModel)]="roadtax.surTax">
       </mat-form-field>
     </form>
   </div>
   <div>
-    <button mat-raised-button type="submit" color="primary" (click)="createRoadTax()"> Create </button>
+    <button mat-raised-button type="submit" color="primary" id="add-new-road"(click)="createRoadTax()"> Create </button>
   </div>
 </div>

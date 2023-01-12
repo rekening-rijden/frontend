@@ -8,14 +8,14 @@
         <form class="example-form">
           <mat-form-field>
             <mat-label>Tax per Kilometer (GBP)</mat-label>
-            <input name="kilo-input" matInput [(ngModel)]="baseprice.surTax">
+            <input name="kilo-input" id="{{baseprice.engineType}}" matInput [(ngModel)]="baseprice.surTax">
           </mat-form-field>
         </form>
       </div>
       <div fxLayout="row">
-        <button mat-raised-button type="submit" (click)="updateBasePrice()"> Update </button>
+        <button mat-raised-button type="submit" id="update-{{baseprice.engineType}}" (click)="updateBasePrice()"> Update </button>
         &nbsp;
-        <button mat-raised-button type="submit" color="warn" (click)="deleteBasePrice()"> Delete </button>
+        <button mat-raised-button type="submit" color="warn" id="delete-{{baseprice.engineType}}" (click)="deleteBasePrice()"> Delete </button>
       </div>
     </div>
   </div>

@@ -3,7 +3,7 @@
     <mat-card-title style="color: #3659db">
       Baseprices
     </mat-card-title>
-    <div *ngFor="let baseprice of baseprices">
+    <div *ngFor="let baseprice of baseprices" id="baseprice">
       <app-update-baseprice [baseprice]="baseprice" (update)="updateData()" (delete)="updateData()"></app-update-baseprice>
       <hr>
     </div>

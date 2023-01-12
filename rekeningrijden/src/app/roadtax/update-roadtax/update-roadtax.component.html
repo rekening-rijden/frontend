@@ -8,14 +8,14 @@
         <form class="example-form">
           <mat-form-field>
             <mat-label>Tax per Kilometer (GBP)</mat-label>
-            <input name="kilo-input" matInput [(ngModel)]="roadtax.surTax">
+            <input name="kilo-input" id="{{roadtax.roadType}}" matInput [(ngModel)]="roadtax.surTax">
           </mat-form-field>
         </form>
       </div>
       <div fxLayout="row">
-        <button mat-raised-button type="submit" (click)="updateRoadtax()"> Update </button>
+        <button mat-raised-button type="submit" id="update-{{roadtax.roadType}}" (click)="updateRoadtax()"> Update </button>
         &nbsp;
-        <button mat-raised-button type="submit" color="warn" (click)="deleteRoadtax()"> Delete </button>
+        <button mat-raised-button type="submit" id="delete-{{roadtax.roadType}}"color="warn" (click)="deleteRoadtax()"> Delete </button>
       </div>
     </div>
   </div>

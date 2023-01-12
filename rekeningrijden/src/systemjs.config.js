@@ -1,5 +1,5 @@
 map: {
-  'leaflet': 'npm:leaflet/dist/leaflet.js',
+  leaflet: 'npm:leaflet/dist/leaflet.js'
 }
 packages: {
   leaflet: {

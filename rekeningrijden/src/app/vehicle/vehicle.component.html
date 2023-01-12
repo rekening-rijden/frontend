@@ -1,15 +1,15 @@
 <div class="column c50">
   <mat-tab-group (selectedIndexChange)="onTabChange($event)">
-    <mat-tab label="Facturen">
+    <mat-tab label="Facturen" id="factuur">
       <ng-template matTabContent>
-        <ul>
+        <ul id="invoices">
           <li *ngFor="let invoice of invoices">
             <p [class.active]="invoice.id === this.selectedInvoiceId" (click)="invoiceOnSelect(invoice.id)">{{ invoice.id }}, € {{ invoice.totalPrice }}, {{ invoice.date | date : 'short' }}</p>
           </li>
         </ul>
       </ng-template>
     </mat-tab>
-    <mat-tab label="Routes">
+    <mat-tab label="Routes" id="routetab">
       <ng-template matTabContent>
         <ag-grid-angular
           style="width: 100%; height: 500px;"

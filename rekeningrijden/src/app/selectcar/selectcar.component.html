@@ -5,7 +5,7 @@
 
   <div class="container">
     <article class="cars">
-      <main class="cars__profiles" *ngFor="let car of cars">
+      <main class="cars__profiles" id="cars" *ngFor="let car of cars">
         <article class="cars__profile" (click)="selectCar(car)">
           <img src="/assets/images/car%20icon.webp" alt="car picture" class="cars__picture">
           <span class="cars__registrationnumber">{{car.registrationNumber}}</span>
