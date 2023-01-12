@@ -6,8 +6,10 @@
 import {default as authInfo} from "../../auth_config.json";
 
 export const environment = {
-  production: false,
   dev: {
+    serverUrl: authInfo.serverUrl
+  },
+  production: {
     serverUrl: authInfo.serverUrl
   }
 };
